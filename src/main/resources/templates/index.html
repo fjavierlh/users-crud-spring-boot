@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.com">
 <head>
-<meta charset="ISO-8859-1">
+<meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
 
-<div th:if="${user != null and !users.empty}">
+<div th:if="${users != null and !users.empty}">
 	<table border="1">
 		<thead>
 			<tr>
@@ -18,18 +18,15 @@
 		</thead>
 		<tbody>
 			<tr th:each="user : ${users}">
-				<td th:text="%">
+				<td th:text="${user.id}">Show ID</td>
+				<td th:text="${user.username}"></td>
+				<td th:text="${user.firstname}"></td>
+				<td th:text="${user.lastname}"></td>
 			</tr>		
 		</tbody>
 	</table>
 
 </div>
-
-<ul>
-	<li th:each="user : ${users}">
-		<span th:text="${user.username}"></span>	
-	</li>
-</ul>	
 
 </body>
 </html>
