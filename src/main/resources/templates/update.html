@@ -10,6 +10,8 @@
 
 	<h2>User data:</h2>
 	<form th:action="@{/save}"  method="POST" th:object="${user}">
+	
+		<input type="hidden" name="id" th:field="*{id}"/>
 
 		<label for="username">Username:</label>
 		<input type="text" name="username" th:field="*{username}"/>
