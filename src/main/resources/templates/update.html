@@ -14,18 +14,20 @@
 		<input type="hidden" name="id" th:field="*{id}"/>
 
 		<label for="username">Username:</label>
-		<input type="text" name="username" th:field="*{username}"/>
-		<span th:if="${#fields.hasErrors('username')}" th:errors="*{username}">Username is required</span>
+		<input type="text" name="username" th:field="*{username}"/><br/>
+		<span th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></span>
 		<br/>
 		
 		<label for="firstname">Firstname:</label>
-		<input type="text" name="firstname" th:field="*{firstname}"/>
-		<span th:if="${#fields.hasErrors('firstname')}" th:errors="*{firstname}">Firstname is required</span>
+		<input type="text" name="firstname" th:field="*{firstname}"/><br/>
+		<span th:if="${#fields.hasErrors('firstname')}" th:errors="*{firstname}"></span>
+		<br/>
 		
-		<br/>
 		<label for="lastname">Lastname:</label>
-		<input type="text" name="lastname" th:field="*{lastname}"/>
-		<br/>
+		<input type="text" name="lastname" th:field="*{lastname}"/><br/>
+		<span th:if="${#fields.hasErrors('lastname')}" th:errors="*{lastname}"></span>
+ 		<br/>
+		
 		<input type="submit" name="save" value="Save user"/>
 	</form>
 </body>
