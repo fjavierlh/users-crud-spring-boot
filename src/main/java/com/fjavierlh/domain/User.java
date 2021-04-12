@@ -1,6 +1,7 @@
 package com.fjavierlh.domain;
 
 import javax.persistence.Entity;
+import javax.validation.constraints.NotEmpty;
 
 import java.io.Serializable;
 
@@ -22,8 +23,13 @@ public class User implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	
+	@NotEmpty
 	private String username;
+	
+	@NotEmpty
 	private String firstname;
+	
 	private String lastname;
 	
 }
