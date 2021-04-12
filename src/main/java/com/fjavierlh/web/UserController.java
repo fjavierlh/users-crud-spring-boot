@@ -24,18 +24,33 @@ public class UserController {
 		
 		return "index";
 	}
-	/*
+	
 	@GetMapping("/insert")
 	public String insert(User user) {
 		
 		return "update";
 	}
-	*/
+	
 	@PostMapping("/save")
 	public String save(User user) {
 		
 		this.userService.saveUser(user);
 		
+		return "redirect:/";
+	}
+	
+	
+	@GetMapping("/edit/{id}")
+	public String edit(User user, Model model) {
+		user = this.userService.findUser(user);
+		model.addAttribute("user", user);
+		
+		return "update";
+	}
+	
+	@GetMapping("/delete")
+	public String delete(User user) {
+		this.userService.deleteUser(user);
 		return "redirect:/";
 	}
 
