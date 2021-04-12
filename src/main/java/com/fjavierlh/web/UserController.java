@@ -24,7 +24,7 @@ public class UserController {
 		
 		var users = userService.listUsers();
 		model.addAttribute("users", users);
-		
+
 		return "index";
 	}
 	
@@ -43,7 +43,6 @@ public class UserController {
 		
 		return "redirect:/";
 	}
-	
 	
 	@GetMapping("/edit/{id}")
 	public String edit(User user, Model model) {
