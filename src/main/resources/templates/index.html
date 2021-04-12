@@ -16,6 +16,8 @@
 				<th>Username</th>
 				<th>Firstname</th>
 				<th>Lastname</th>
+				<th>Editar</th>
+				<th>Eliminar</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -24,6 +26,12 @@
 				<td th:text="${user.username}"></td>
 				<td th:text="${user.firstname}"></td>
 				<td th:text="${user.lastname}"></td>
+				<td>
+					<a th:href="@{/edit/} + ${user.id}" th:text="Edit"></a>
+				</td>
+				<td>
+					<a th:href="@{/delete(id = ${user.id})} " th:text="Delete"></a>
+				</td>
 			</tr>		
 		</tbody>
 	</table>
