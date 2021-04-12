@@ -24,12 +24,13 @@ public class User implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@NotEmpty
+	@NotEmpty(message="Username is required")
 	private String username;
 	
-	@NotEmpty
+	@NotEmpty(message="Firstname is required")
 	private String firstname;
 	
+	@NotEmpty(message="Lastname is required")
 	private String lastname;
 	
 }
