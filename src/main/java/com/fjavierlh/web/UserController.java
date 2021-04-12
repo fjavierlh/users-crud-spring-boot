@@ -7,18 +7,18 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import com.fjavierlh.dao.IUserDao;
 import com.fjavierlh.domain.User;
+import com.fjavierlh.service.UserService;
 
 @Controller
 public class UserController {
 	
 	@Autowired
-	private IUserDao userDao;
+	private UserService userService;
 	
 	@GetMapping("/")
 	public String index(Model model) {
 		
-		var users = userDao.findAll();
-		
+		var users = userService.listUsers();
 		model.addAttribute("users", users);
 		
 		return "index";
